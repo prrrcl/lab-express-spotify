@@ -1,17 +1,7 @@
- <section>
- {{#each albums}}
-<article> 
-<header>
-  {{name}}
-</header>
-<section>
-  <img src="{{images.0.url}}" alt="{{name}} cover">
-</section>
-<footer>
-  <a href="/tracklist/{{this.id}}">Check tracklist</a>
-</footer>
-</article>
- 
+{{> header title="List of albums:"}}
+
+<section class="section-gallery">
+{{#each albums}}
+  {{>artistCard url="tracklist"}}
 {{/each}}
-   
- </section>
+</section>

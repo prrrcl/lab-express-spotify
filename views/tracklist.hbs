@@ -1,6 +1,12 @@
-<section>
+{{> header title="Tracklist:" }}
+<section class="section-gallery tracklist">
   {{#each tracklist}}
-    {{name}}
+  <article class="track-item">
+    <p>
+      {{name}}
+    </p>
+      
      <audio src="{{preview_url}}" controls></audio>
+  </article>
   {{/each}}
 </section>

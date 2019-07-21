@@ -27,6 +27,13 @@ app.use('/artists', artistsRouter);
 app.use('/albums', albumRouter);
 app.use('/tracklist', tracklistRouter);
 
+hbs.registerHelper('ifCond', function (v1, options) {
+  if (v1 === []) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   res.status(404);

@@ -1,0 +1,10 @@
+<article class="item-gallery">
+<a href="/{{url}}/{{id}}">
+    {{#if images}}
+    <img src="{{images.0.url}}" alt="{{name}}">
+    {{else}}
+    <img src="./images/not-found.jpg" alt="">
+    {{/if}}
+  <h3>{{name}}</h3>
+  </a>
+</article>

@@ -3,27 +3,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
-const SpotifyWebApi = require('spotify-web-api-node');
-
-// require spotify-web-api-node package here:
-const clientId = '3fb91a0d335c4ba4a800aaefc27967cc';
-const clientSecret = '7cb180e0cb7246f4976b1013574a288b';
-
-const spotifyApi = new SpotifyWebApi({
-  clientId: clientId,
-  clientSecret: clientSecret
-});
-
-// Retrieve an access token
-spotifyApi.clientCredentialsGrant()
-  .then(data => {
-    spotifyApi.setAccessToken(data.body['access_token']);
-  })
-  .catch(error => {
-    console.log('Something went wrong when retrieving an access token', error);
-  });
 
 const indexRouter = require('./routes/index');
+const artistsRouter = require('./routes/artists');
+const albumRouter = require('./routes/albums');
+const tracklistRouter = require('./routes/tracklists');
 
 const app = express();
 
@@ -39,6 +23,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/artists', artistsRouter);
+app.use('/albums', albumRouter);
+app.use('/tracklist', tracklistRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -1,0 +1,12 @@
+<section>
+{{#each artist}}
+<article>
+  <header>
+    <img src="{{images.0.url}}" alt="{{name}}">
+  </header>
+  <h3>{{name}}</h3>
+  <p>
+    <a href="/albums/{{id}}">View album's</a></p>
+</article>
+{{/each}}
+</section>

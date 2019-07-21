@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
 :root{
-  --primary-color: #1DB954;
+  --primary-color: rgb(102,182,205);
   --white: #ffffff;
   --black: #222326;
+  --font: 'Roboto Slab', serif;
 }
 
  html {
@@ -13,7 +16,7 @@
 }
 
  body {
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: var(--font) ;
   color: var(--black);
   font-size: 16px;
   line-height: 147%;
@@ -23,13 +26,15 @@
 
  h1{
   color: var(--primary-color);
-  text-align: center;
 }
 
  a {
   color: var(--primary-color);
+  text-decoration: none;
 }
-
+a p{
+  color: var(--black)
+}
  ul, li{
   margin: 0;
   padding: 0;
@@ -44,11 +49,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
- section, article {
-  margin-bottom: 20px;
-  padding-top: 20px;
 }
 
  .container {
@@ -87,4 +87,57 @@
   display: flex;
   flex-direction: column;
   padding: 1rem 0.75rem;
+}
+.main-index{
+  display: flex;
+}
+.left-content, .right-content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.landing-img{
+  width: calc(100% - 100px);
+  padding: 50px 0 50px;
+}
+.title-landing{
+  font-size: 80px; 
+  text-align: center;
+}
+.title-landing span{
+  font-size: 100px;
+  display: block;
+  margin-top: 40px;
+}
+.subtitle-landing{
+  text-align: center;
+}
+.form-search{
+  display: flex;
+  flex-direction: column;
+  padding: 0 45px;
+  margin: 40px 0
+}
+.form-search input{
+  padding: 5px 8px;
+  outline: none;
+  font-size:16px;
+  border:none;
+  font-family: var(--font);
+  margin-bottom: 60px;
+}
+.form-search button{
+  border:none;
+  outline: none;
+  padding: 15px 20px;
+  background: var(--primary-color);
+  color:white;
+  font-size: 24px;
+  font-family: var(--font);
+  cursor: pointer;
+}
+.form-search button:hover{
+  transition:1s ease-in-out .2s;
+  background: rgb(83, 149, 169);
 }
